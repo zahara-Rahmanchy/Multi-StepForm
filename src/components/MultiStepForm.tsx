@@ -44,7 +44,7 @@ export default function MultiStepForm() {
     defaultValues:userInfo,
     mode:"onBlur"
   })
-  const handleNext = async() => {
+  const handleNext =async() => {
     let stepFields: (keyof InfoType)[] = [];
 
   if (currentStep === 0) stepFields = ['FullName', 'Email', 'Phone'];
@@ -53,7 +53,7 @@ export default function MultiStepForm() {
 
   const valid = await trigger(stepFields);
 
-    if (valid && currentStep < 4) {
+    if (valid &&  currentStep < 4) {
       setCurrentStep(prev => prev + 1);
     }
   };
@@ -64,14 +64,16 @@ export default function MultiStepForm() {
     }
   };
 
-  const onSubmit:SubmitHandler<InfoType>=(data)=>{
+  const onSubmit:SubmitHandler<InfoType>=(data,e)=>{
+    e?.preventDefault(); 
+    console.log("dsjhjkhaj")
     console.log(data)
     alert("User Data Submitted Successfully!")
     setUserInfo(data)
   }
-//   console.log("useinfo: ",userInfo)
+//   console.log("useinfo: ",userInfo) :
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow">
+    <div className="max-w-4xl mx-auto my-10 p-6 bg-white rounded-lg shadow dark:bg-black ">
       <ProgressBar currentStep={currentStep} />
 
        <form onSubmit={handleSubmit(onSubmit)}>
@@ -82,16 +84,18 @@ export default function MultiStepForm() {
         {currentStep === 3 && 
             <>
             <Summary data={getValues()}/>
+           
+           </>}
             <div className="w-full text-right mt-4">
-              <button 
-                type='submit' 
-                disabled={currentStep !== 3}  
-                className="btn-sm px-4 py-2 mb-10  bg-violet-600 text-white rounded cursor-pointer"
-              >
-                Submit
-              </button>
-            </div></>
-          }
+            <button 
+              type='submit' 
+              disabled={currentStep !== 3}  
+              className="disabled:hidden btn-sm px-4 py-2 mb-10  bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded cursor-pointer"
+            >
+              Submit
+            </button>
+          </div>
+          
           
        
        </form>
@@ -100,14 +104,14 @@ export default function MultiStepForm() {
         <button
           onClick={handlePrevious}
           disabled={currentStep === 0}
-          className="px-4 py-2 bg-blue-400 text-white rounded disabled:opacity-50 cursor-pointer"
+          className="px-4 py-2 bg-violet-500 text-white rounded disabled:opacity-50 cursor-pointer"
         >
           Previous
         </button>
         <button
           onClick={handleNext}
           disabled={currentStep === 3}
-          className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50 cursor-pointer"
+          className="px-4 py-2 bg-yellow-500 text-white rounded disabled:opacity-50 cursor-pointer"
         >
           Next
         </button>

@@ -17,11 +17,12 @@ type ProgressBarProps = {
           <div key={index} className="flex-1">
             <div className="flex flex-col items-center  justify-center relative">
               <div
-                className={`w-12 h-8 rounded-br-3xl rounded-tr-3xl flex items-center justify-center text-white z-10 transition-color duration-500 ease-in-out ${
+                className={`w-12 h-8 rounded-br-3xl rounded-tr-3xl flex items-center justify-center text-white z-10  ${
                   index <= currentStep
-                    ? 'bg-blue-600'
-                    : 'bg-gray-300'
+                    ? 'bg-gradient-to-r from-indigo-300 via-purple-500 to-yellow-200 transition-colors duration-500 ease-in'
+                    : 'bg-gray-300 dark:bg-slate-700 '
                 }`}
+                style={{ willChange: 'background-color' }}
               >
                 {index + 1}
               </div>
@@ -30,11 +31,12 @@ type ProgressBarProps = {
               </span>
               {index < steps.length - 1 && (
                 <div
-                  className={`absolute top-4 left-[3rem] -right-[3rem] w-full h-1 transition-color duration-1000 ease-in-out ${
+                  className={`absolute top-4 md:left-[6rem] left-[3rem] w-full h-1  ${
                     index < currentStep
-                      ? 'bg-blue-600'
-                      : 'bg-gray-300'
+                      ? 'bg-gradient-to-r from-indigo-300 via-purple-500 to-yellow-200 transition-colors duration-500 ease-in'
+                      : 'bg-gray-300 dark:bg-slate-700 transition-colors duration-100 ease'
                   }`}
+                  style={{ willChange: 'background-color' }}
                 />
               )}
             </div>

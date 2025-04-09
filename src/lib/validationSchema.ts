@@ -18,5 +18,5 @@ Password: z
   ConfirmPassword: z.string().min(6, 'Confirm Password must be at least 6 characters'),
 }).refine((data) => data.Password === data.ConfirmPassword, {
   message: 'Passwords must match',
-  path: ['confirmPassword'],
+  path: ['ConfirmPassword'],
 })
