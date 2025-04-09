@@ -10,7 +10,8 @@ import Address from './Address';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { validationSchema } from '@/lib/validationSchema';
 import Summary from './Summary';
-type InfoType={
+import { useSaveUserMutation } from '@/lib/Mutation';
+export type InfoType={
     FullName:string,
     Email:string,
     Phone:string,
@@ -24,6 +25,7 @@ type InfoType={
 
 export default function MultiStepForm() {
   const [currentStep, setCurrentStep] = useState(0);
+  const mutation = useSaveUserMutation()
   const [userInfo,setUserInfo] = useState<InfoType>({
     FullName:"",
     Email:"",
@@ -66,10 +68,11 @@ export default function MultiStepForm() {
 
   const onSubmit:SubmitHandler<InfoType>=(data,e)=>{
     e?.preventDefault(); 
-    console.log("dsjhjkhaj")
-    console.log(data)
+    
+    console.log("User Form Data:" ,data)
     alert("User Data Submitted Successfully!")
     setUserInfo(data)
+    mutation.mutate(data)
   }
 //   console.log("useinfo: ",userInfo) :
   return (

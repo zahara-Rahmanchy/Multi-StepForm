@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Multi-Step Form App
 
-## Getting Started
+This is a multi-step form built using **Next.js**, **TypeScript**, and **Tailwind CSS**. It walks users through multiple steps—Personal Info, Address, Account Setup—and shows a summary at the end and console logs
+the user information.This project supports dark mode implemented using Tailwind CSS and form validation using Zod.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** – React framework for building the UI
+- **TypeScript** – Type safety and better developer experience
+- **Tailwind CSS** – Utility-first CSS framework for styling
+- **React Hook Form** – Simple, performant form handling
+- **Zod** – Schema validation for form data
+- **Lucide Icons** – Clean and modern icons
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ▶️ How to Run Locally
 
-## Learn More
+### 1. Clone the repository
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-- git clone https://github.com/your-username/multistep-form.git
+   cd multistep-form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Install dependencies
+-    npm install
 
-## Deploy on Vercel
+### 3. Run the development server
+-   npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##### Visit http://localhost:3000 in your browser to view the app.
