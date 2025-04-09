@@ -1,7 +1,7 @@
 # 📝 Multi-Step Form App
 
 This is a multi-step form built using **Next.js**, **TypeScript**, and **Tailwind CSS**. It walks users through multiple steps—Personal Info, Address, Account Setup—and shows a summary at the end and console logs
-the user information.This project supports dark mode implemented using Tailwind CSS and form validation using Zod.
+the user information.This project supports dark mode implemented using Tailwind CSS and form validation using Zod. API simulation is done using TanStack Query and data saved to local Storage.
 
 ---
 
@@ -15,6 +15,8 @@ the user information.This project supports dark mode implemented using Tailwind 
 - **Lucide Icons** – Clean and modern icons
 
 ---
+###  Live Link
+- https://zahara-rahmanchy.github.io/Multi-StepForm
 
 ## ▶️ How to Run Locally
 
